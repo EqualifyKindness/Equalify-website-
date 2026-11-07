@@ -1,0 +1,488 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EQUALIFY | Equality for Everyone</title>
+    <link rel="stylesheet" href="style.css">
+     <link rel="icon" type="image/png" href="equalify-logo.png">
+</head>
+
+<body>
+    <!-- STEP 20 - LOADING SCREEN -->
+<div id="loader">
+    <h1>EQUALIFY.</h1>
+    <p>Creating a world of equality...</p>
+    <div class="loader-spinner"></div>
+</div>
+
+    <!-- NAVIGATION -->
+   <nav class="navbar">
+    <a href="#home" class="logo">
+        <img src="./equalify-logo.png" alt="EQUALIFY Logo">
+    </a>
+
+    <button class="menu-toggle"
+            id="menu-toggle"
+            aria-label="Open navigation menu"
+            aria-expanded="false">
+        ☰
+    </button>
+
+    <div class="nav-links" id="nav-links">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#learn">Learn</a>
+        <a href="#game">Word Game</a>
+        <a href="#quiz">Quiz</a>
+        <a href="#mythfact">Myth vs. Fact</a>
+        <a href="#stories">Community Stories</a>
+        <a href="#resources">Resources</a>
+        <a href="#support">Support</a>
+        <a href="#survey">Survey</a>
+    </div>
+</nav>
+
+
+    <!-- HOMEPAGE -->
+    <section id="home" class="hero">
+
+        <p class="tagline">EQUALITY STARTS WITH YOU</p>
+
+        <h1>
+            Your Gender Should Never
+            <span>Limit Your Dreams.</span>
+        </h1>
+
+        <p class="description">
+            A platform that promotes gender equality,
+            respect, awareness, and equal opportunities
+            for everyone.
+        </p>
+
+        <a href="#about">
+            <button>Explore EQUALIFY →</button>
+        </a>
+
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="content">
+
+        <p class="tagline">WHO WE ARE</p>
+
+        <h2>What is EQUALIFY?</h2>
+
+        <p>
+            EQUALIFY is an educational platform designed
+            to promote gender equality through learning,
+            interactive activities, and community awareness.
+        </p>
+
+    </section>
+
+    <!-- LEARN -->
+    <section id="learn" class="content">
+
+        <p class="tagline">EDUCATE YOURSELF</p>
+
+        <h2>Learn. Understand. Respect.</h2>
+
+        <div class="cards">
+
+            <div class="card">
+                <h3>Gender Equality</h3>
+                <p>Equal rights and opportunities for everyone.</p>
+            </div>
+
+            <div class="card">
+                <h3>Respect</h3>
+                <p>Understanding and valuing individual differences.</p>
+            </div>
+
+            <div class="card">
+                <h3>SDG 5</h3>
+                <p>Achieve gender equality and empower all women and girls.</p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- WORD GAME -->
+  
+<section id="game" class="content">
+
+    <p class="tagline">TEST YOUR KNOWLEDGE</p>
+
+    <h2>EQUALIFY Word Challenge</h2>
+
+    <p>Guess the words and learn about equality!</p>
+
+    <div class="game-box">
+
+        <p id="progress">QUESTION 1 OF 5</p>
+
+        <h3 id="hint">Loading question...</h3>
+
+        <input
+            type="text"
+            id="answer"
+            placeholder="Type your answer here..."
+        >
+
+        <p id="feedback"></p>
+
+        <button id="checkBtn" onclick="checkAnswer()">
+            Check Answer
+        </button>
+
+        <button id="nextBtn" onclick="nextQuestion()" hidden>
+            Next Question →
+        </button>
+
+        <h3 id="score">Score: 0</h3>
+
+    </div>
+
+</section>
+
+<!-- KNOWLEDGE QUIZ -->
+
+<section id="quiz" class="content">
+
+    <p class="tagline">TEST WHAT YOU KNOW</p>
+
+    <h2>EQUALIFY Knowledge Quiz</h2>
+
+    <p>Choose the correct answer and learn something new!</p>
+
+    <div class="quiz-box">
+
+        <p id="quiz-progress">QUESTION 1 OF 5</p>
+
+        <h3 id="quiz-question">Loading question...</h3>
+
+        <div id="quiz-options"></div>
+
+        <p id="quiz-feedback"></p>
+
+        <button id="quiz-next" onclick="nextQuizQuestion()" hidden>
+            Next Question →
+        </button>
+
+        <h3 id="quiz-score">Score: 0/5</h3>
+
+    </div>
+
+</section>
+<!-- MYTH VS FACT -->
+
+<section id="mythfact" class="content">
+
+    <p class="tagline">BREAK THE STEREOTYPES</p>
+
+    <h2>MYTH vs. FACT</h2>
+
+    <p>Can you distinguish gender stereotypes from facts?</p>
+
+    <div class="myth-box">
+
+        <p id="myth-progress">STATEMENT 1 OF 10</p>
+
+        <h3 id="myth-question">Loading statement...</h3>
+
+        <div class="myth-buttons">
+
+            <button id="myth-btn" onclick="checkMythAnswer(false)">
+                MYTH
+            </button>
+
+            <button id="fact-btn" onclick="checkMythAnswer(true)">
+                FACT
+            </button>
+
+        </div>
+
+        <p id="myth-feedback"></p>
+
+        <button id="myth-next" onclick="nextMythQuestion()" hidden>
+            Next Statement →
+        </button>
+
+        <h3 id="myth-score">Score: 0/10</h3>
+
+    </div>
+
+</section>
+<!-- COMMUNITY STORIES -->
+
+<section id="stories" class="content">
+
+    <p class="tagline">REAL VOICES, EQUAL CHOICES</p>
+
+    <h2>Community Stories</h2>
+
+    <p>
+        Discover stories that inspire respect,
+        equality, and inclusion.
+    </p>
+
+    <div class="stories-container">
+
+        <div class="story-card">
+            <div class="story-icon">📚</div>
+            <h3>The Power of Education</h3>
+            <p class="story-label">FICTIONAL STUDENT STORY</p>
+            <p>
+                Alex believes that education should be
+                available to everyone. Alex encourages
+                classmates to support one another and
+                respect everyone's dreams.
+            </p>
+            <button onclick="showStory(0)">
+                Read More
+            </button>
+        </div>
+
+        <div class="story-card">
+            <div class="story-icon">💼</div>
+            <h3>Breaking Career Stereotypes</h3>
+            <p class="story-label">FICTIONAL STORY</p>
+            <p>
+                Sam dreams of becoming a nurse.
+                Despite common stereotypes, Sam believes
+                that careers should be based on passion,
+                skills, and dedication.
+            </p>
+            <button onclick="showStory(1)">
+                Read More
+            </button>
+        </div>
+
+        <div class="story-card">
+            <div class="story-icon">🤝</div>
+            <h3>A Community of Respect</h3>
+            <p class="story-label">FICTIONAL COMMUNITY STORY</p>
+            <p>
+                A group of students starts an awareness
+                campaign to promote fairness, kindness,
+                and equal opportunities in their school.
+            </p>
+            <button onclick="showStory(2)">
+                Read More
+            </button>
+        </div>
+
+    </div>
+
+    <!-- STORY DISPLAY -->
+
+    <div id="story-display" class="story-display" hidden>
+        <h3 id="story-title"></h3>
+        <p id="story-full-text"></p>
+        <button onclick="closeStory()">Close Story</button>
+    </div>
+
+    <!-- SHARE YOUR THOUGHTS -->
+
+    <div class="reflection-box">
+
+        <p class="tagline">YOUR VOICE MATTERS</p>
+
+        <h2>Share Your Thoughts</h2>
+
+        <p>
+            What does gender equality mean to you?
+            Share a short reflection.
+        </p>
+
+        <form id="reflection-form">
+
+            <textarea
+                id="reflection-input"
+                placeholder="Write your thoughts here..."
+                rows="5"
+                maxlength="500"
+                required>
+            </textarea>
+
+            <p class="privacy-note">
+                Please do not include private or identifying information.
+                Your reflection will only appear on this page and
+                will not be sent to a server.
+            </p>
+
+            <button type="submit">
+                Share Reflection
+            </button>
+
+        </form>
+
+        <div id="reflection-result"></div>
+
+    </div>
+
+</section>
+<section id="resources" class="content">
+
+    <p class="tagline">LEARN. UNDERSTAND. EMPOWER.</p>
+
+    <h2>Educational Resources</h2>
+
+    <p>Explore topics that promote gender equality and awareness.</p>
+
+    <div class="resources-container">
+
+        <div class="resource-card">
+            <h3>🌍 SDG 5</h3>
+            <p>Learn about the United Nations goal of achieving gender equality and empowering women and girls.</p>
+            <button onclick="openResource(0)">Explore</button>
+        </div>
+
+        <div class="resource-card">
+            <h3>⚖️ Human Rights</h3>
+            <p>Understand why every person deserves equal rights, dignity, and freedom.</p>
+            <button onclick="openResource(1)">Explore</button>
+        </div>
+
+        <div class="resource-card">
+            <h3>💡 Gender Stereotypes</h3>
+            <p>Discover how stereotypes affect people's choices and opportunities.</p>
+            <button onclick="openResource(2)">Explore</button>
+        </div>
+
+        <div class="resource-card">
+            <h3>🤝 Anti-Discrimination</h3>
+            <p>Learn how to recognize discrimination and encourage fair treatment.</p>
+            <button onclick="openResource(3)">Explore</button>
+        </div>
+
+    </div>
+
+    <div id="resource-display" class="resource-display" hidden>
+        <h3 id="resource-title"></h3>
+        <p id="resource-description"></p>
+        <button onclick="closeResource()">Close</button>
+    </div>
+
+</section>
+
+<!-- EQUALIFY SUPPORT SECTION -->
+
+<section id="support" class="content">
+
+    <p class="tagline">YOUR RIGHTS. YOUR VOICE. YOUR FUTURE.</p>
+
+    <h2>Gender Equality Support</h2>
+
+    <p>
+        Everyone deserves to feel safe, respected, and treated fairly.
+        Learn how to respond to discrimination and find support.
+    </p>
+
+    <div class="resources-container">
+
+        <div class="resource-card">
+            <h3>🛡️ Know Your Rights</h3>
+            <p>Learn about equal rights, respect, and protection against discrimination.</p>
+            <button onclick="showSupport(0)">Learn More</button>
+        </div>
+
+        <div class="resource-card">
+            <h3>🏫 School Support</h3>
+            <p>Find out how to approach a trusted teacher, counselor, or school official.</p>
+            <button onclick="showSupport(1)">Learn More</button>
+        </div>
+
+        <div class="resource-card">
+            <h3>🤝 Be an Ally</h3>
+            <p>Discover ways to support people experiencing unfair treatment.</p>
+            <button onclick="showSupport(2)">Learn More</button>
+        </div>
+
+        <div class="resource-card">
+            <h3>📢 Reporting Guide</h3>
+            <p>Understand how to report discrimination through appropriate channels.</p>
+            <button onclick="showSupport(3)">Learn More</button>
+        </div>
+
+    </div>
+
+    <div id="support-display" class="resource-display" hidden>
+        <h3 id="support-title"></h3>
+        <p id="support-description"></p>
+        <button onclick="closeSupport()">Close</button>
+    </div>
+
+</section>
+
+<!-- EQUALIFY INTERACTIVE SURVEY -->
+
+<section id="survey" class="content">
+
+    <p class="tagline">YOUR OPINION MATTERS</p>
+
+    <h2>Gender Equality Survey</h2>
+
+    <p>Share your thoughts and understanding about equality.</p>
+
+    <div class="survey-card">
+
+        <h3 id="survey-question">Question 1 of 5</h3>
+
+        <p id="survey-text">
+            Do you believe everyone deserves equal opportunities?
+        </p>
+
+        <div id="survey-options">
+            <button onclick="answerSurvey('Yes')">Yes</button>
+            <button onclick="answerSurvey('No')">No</button>
+        </div>
+
+        <p id="survey-feedback"></p>
+
+        <button id="survey-next" onclick="nextSurvey()" hidden>
+            Next Question →
+        </button>
+
+        <div id="survey-summary" hidden>
+
+    <h3 id="survey-result"></h3>
+
+    <p>Total Responses: <span id="total-responses">0</span></p>
+
+    <p>Yes: <span id="yes-count">0</span>
+    (<span id="yes-percent">0</span>%)</p>
+
+    <p>No: <span id="no-count">0</span>
+    (<span id="no-percent">0</span>%)</p>
+
+    <div class="result-bar">
+        <div id="yes-bar"></div>
+        <div id="no-bar"></div>
+    </div>
+
+    <button onclick="resetSurvey()">Reset Survey</button>
+
+</div>  
+
+    </div>
+
+</section>
+
+
+
+    <!-- FOOTER -->
+    <footer>
+        <h2>EQUALIFY.</h2>
+        <p>Your gender should never limit your dreams or opportunities.</p>
+        <p>© 2026 EQUALIFY | Group 5</p>
+    </footer>
+<script src="script.js"></script>
+<button id="back-to-top" title="Back to Top">
+    ↑
+</button>
+</body>
+</html>
